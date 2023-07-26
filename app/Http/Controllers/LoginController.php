@@ -11,8 +11,6 @@ class LoginController extends Controller
 {
     public function login(Request $request) {
         if ($request->isMethod('POST')) {
-
-            dd($request);
             //đăng nhập thành công
             if (Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
                 return redirect()->route('st');
